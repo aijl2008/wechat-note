@@ -1,0 +1,30 @@
+{
+  "name": "aijl/wechat-note",
+  "description": "基于wechat的便笺程序",
+  "keywords": [
+    "laravel",
+    "note",
+    "wechat"
+  ],
+  "license": "MIT",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Jerry",
+      "email": "awz@awz.cn"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9",
+    "laravel/framework": "5.3.*",
+    "overtrue/WeChat": "^3.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Aijl\\note\\": "vendor/aijl/note/src/"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  }
+}
