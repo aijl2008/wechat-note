@@ -12,7 +12,7 @@ class NotesController extends \App\Http\Controllers\Controller {
      * @return void
      */
     public function __construct () {
-        $this->middleware ( 'auth' , [ 'index' ] );
+        $this->middleware ( 'auth' , [ 'except' => [ 'index' ] ] );
     }
 
     /**

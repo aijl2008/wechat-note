@@ -27,6 +27,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
             __DIR__ . '/../config/wechat.php' => config_path ( 'wechat.php' ) ,
         ] , 'config' );
         $this->publishes ( [
+            __DIR__ . '/../resources/views/layouts/app.blade.php' => base_path ( 'resources/views' ) . '/layouts/app.blade.php' ,
             __DIR__ . '/../resources/views/auth/login.blade.php' => base_path ( 'resources/views' ) . '/auth/login.blade.php' ,
         ] , 'view' );
     }
