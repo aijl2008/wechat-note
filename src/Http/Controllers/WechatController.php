@@ -1,5 +1,5 @@
 <?php
-namespace Jerry\Note\Http\Controllers;
+namespace Awz\Note\Http\Controllers;
 
 use App\Models\Note;
 use EasyWeChat\Foundation\Application;

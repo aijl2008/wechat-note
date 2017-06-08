@@ -1,5 +1,5 @@
 {
-  "name": "jerry/wechat-note",
+  "name": "awz/wechat-note",
   "description": "基于wechat的便笺程序",
   "keywords": [
     "laravel",
@@ -9,7 +9,7 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Jerry",
+      "name": "Awz",
       "email": "awz@awz.cn"
     }
   ],
@@ -19,10 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Jerry\\note\\": "vendor/aijl/note/src/"
-    },
-    "files": [
-      "src/helpers.php"
-    ]
+      "Awz\\note\\": "vendor/awz/note/src/"
+    }
   }
 }

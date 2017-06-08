@@ -1,7 +1,7 @@
 <?php
-namespace Jerry\Note\Http\Controllers;
+namespace Awz\Note\Http\Controllers;
 
-use Jerry\Note\Models\Setting;
+use Awz\Note\Models\Setting;
 use Illuminate\Http\Request;
 use Session;
 

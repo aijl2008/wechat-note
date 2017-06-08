@@ -1,5 +1,5 @@
 <?php
-namespace Jerry\Note\Models;
+namespace Awz\Note\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

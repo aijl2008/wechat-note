@@ -1,5 +1,5 @@
 <?php
-namespace Jerry\Note\Http\Controllers;
+namespace Awz\Note\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
