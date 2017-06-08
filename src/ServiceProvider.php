@@ -1,7 +1,7 @@
 <?php
-namespace Aijl\Note;
+namespace Jerry\Note;
 
-use Aijl\Note\Models\Setting;
+use Jerry\Note\Models\Setting;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider {
     /**

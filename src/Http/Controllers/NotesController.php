@@ -1,7 +1,7 @@
 <?php
-namespace Aijl\Note\Http\Controllers;
+namespace Jerry\Note\Http\Controllers;
 
-use Aijl\Note\Models\Note;
+use Jerry\Note\Models\Note;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 

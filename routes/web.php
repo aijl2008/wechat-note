@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
  * 微信消息接口
  */
 Route::group ( [
-    'namespace' => 'Aijl\Note\Http\Controllers' ,
+    'namespace' => 'Jerry\Note\Http\Controllers' ,
 ] , function () {
     Route::get ( 'api' , 'WechatController@api' );
     Route::post ( 'api' , 'WechatController@api' );
@@ -14,7 +14,7 @@ Route::group ( [
  * 其他页面,需要web中间价
  */
 Route::group ( [
-    'namespace' => 'Aijl\Note\Http\Controllers' ,
+    'namespace' => 'Jerry\Note\Http\Controllers' ,
     'middleware' => [ 'web' ]
 ] , function () {
     Route::get ( '/test' , function () {
