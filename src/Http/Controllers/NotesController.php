@@ -21,7 +21,7 @@ class NotesController extends \App\Http\Controllers\Controller {
      * @return Illuminate\View\View
      */
     public function index () {
-        $notes = Note::paginate ( 25 );
+        $notes = Note::orderBy ( 'created_at' , 'desc' )->paginate ( 25 );
         return view ( 'notes::notes.index' , compact ( 'notes' ) );
     }
 
