@@ -22,6 +22,10 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
             }
             view ()->share ( 'setting' , $setting );
         }
+        // Register the commands...
+        if ( $this->app->runningInConsole () ) {
+            $this->commands ( [ Console\Commands\Install::class ] );
+        }
         $this->loadMigrationsFrom ( __DIR__ . '/../database/migrations' );
         $this->publishes ( [
             __DIR__ . '/../config/wechat.php' => config_path ( 'wechat.php' ) ,
@@ -30,6 +34,9 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
             __DIR__ . '/../resources/views/layouts/app.blade.php' => base_path ( 'resources/views' ) . '/layouts/app.blade.php' ,
             __DIR__ . '/../resources/views/auth/login.blade.php' => base_path ( 'resources/views' ) . '/auth/login.blade.php' ,
         ] , 'view' );
+        $this->publishes ( [
+            __DIR__ . '/../database/seeder/' => database_path ( 'seeder' )
+        ] , 'seeder' );
     }
 
     /**
