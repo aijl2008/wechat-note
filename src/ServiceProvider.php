@@ -22,6 +22,9 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
             }
             view ()->share ( 'setting' , $setting );
         }
+
+        //composer dump-autoload
+
         // Register the commands...
         if ( $this->app->runningInConsole () ) {
             $this->commands ( [ Console\Commands\Install::class ] );
@@ -35,7 +38,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
             __DIR__ . '/../resources/views/auth/login.blade.php' => base_path ( 'resources/views' ) . '/auth/login.blade.php' ,
         ] , 'view' );
         $this->publishes ( [
-            __DIR__ . '/../database/seeder/' => database_path ( 'seeder' )
+            __DIR__ . '/../database/seeds/' => database_path ( 'seeds' )
         ] , 'seeder' );
     }
 

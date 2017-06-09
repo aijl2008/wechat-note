@@ -36,22 +36,24 @@ class Install extends Command {
      */
     public function handle () {
         try {
-            $this->line ( PHP_EOL . 'Scaffold basic login and registration views and routes' . PHP_EOL );
+            $this->line ( "php artisan make:auth" );
             Artisan::call ( 'make:auth' );
-            $this->line ( PHP_EOL . 'Publish all of publishable assets.' . PHP_EOL );
+            $this->line ( "php artisan vendor:publish --force" );
             Artisan::call ( 'vendor:publish' , [
                 '--force' => true ,
             ] );
-            $this->line ( PHP_EOL . 'Create the migration repository.' . PHP_EOL );
+            $this->line ( 'php artisan migrate' );
             Artisan::call ( 'migrate' );
-            $this->line ( PHP_EOL . 'Seed the database with records.' . PHP_EOL );
+            $this->line ( 'php artisan db:seed --class=SettingsTableSeeder' );
             Artisan::call ( 'db:seed' , [
                 '--class' => 'SettingsTableSeeder' ,
             ] );
+            system ( 'composer dump-autoload' );
+            $this->line ( 'php artisan db:seed --class=UsersTableSeeder' );
             Artisan::call ( 'db:seed' , [
                 '--class' => 'UsersTableSeeder' ,
             ] );
-            $this->line ( PHP_EOL . 'Installed successfully.' . PHP_EOL );
+            $this->line ( 'Installed successfully.' );
         } catch ( Exception $e ) {
             $this->line ( PHP_EOL . '<error>An unexpected error occurred. Installation could not continue.</error>' );
             $this->error ( "[✘] {$e->getMessage()}" );
