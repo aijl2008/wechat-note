@@ -62,6 +62,18 @@ class NotesController extends \App\Http\Controllers\Controller {
     }
 
     /**
+     * Show the note.
+     *
+     * @param int $id
+     *
+     * @return Illuminate\View\View
+     */
+    public function view ( $id ) {
+        $note = Note::findOrFail ( $id );
+        return view ( 'notes::notes.view' , compact ( 'note' ) );
+    }
+
+    /**
      * Update the specified note in the storage.
      *
      * @param  int $id

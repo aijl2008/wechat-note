@@ -48,5 +48,13 @@ class Note extends Model {
      */
     protected $casts = [ ];
 
+    protected $appends = [ 'abstract' ];
 
+    public function getAbstractAttribute () {
+        if ( strlen ( $this->attributes[ 'content' ] ) <= 100 ) {
+            return $this->attributes[ 'content' ];
+        }
+        route ( 'notes.note.view' , $this->attributes[ 'id' ] );
+        return str_limit ( $this->attributes[ 'content' ] , 100 ) . '&gt;&gt;<a href="Note.php" target="_blank">MORE</a>';
+    }
 }

@@ -32,7 +32,7 @@
                             <span class="glyphicon glyphicon-time"></span> {{ \Carbon\Carbon::parse($note->created_at)->diffForHumans() }}
                         </form>
                     </h3>
-                    @if ($note->content) {!! nl2br($note->content)  !!}@endif
+                    @if ($note->abstract) {!! nl2br($note->abstract)  !!}@endif
                     @if ($note->image)<img src="/image/note/{{ $note->id }}" class="img-responsive"/>@endif
                     <hr>
                 </article>

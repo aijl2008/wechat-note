@@ -37,6 +37,7 @@ Route::group ( [
         Route::get ( '/' , 'NotesController@index' )->name ( 'notes.note.index' );
         Route::get ( '/create' , 'NotesController@create' )->name ( 'notes.note.create' );
         Route::get ( '/{note}/edit' , 'NotesController@edit' )->name ( 'notes.note.edit' )->where ( 'id' , '[0-9]+' );
+        Route::get ( '/{note}/view' , 'NotesController@view' )->name ( 'notes.note.view' )->where ( 'id' , '[0-9]+' );
         Route::post ( '/' , 'NotesController@store' )->name ( 'notes.note.store' );
         Route::put ( 'note/{note}' , 'NotesController@update' )->name ( 'notes.note.update' )->where ( 'id' , '[0-9]+' );
         Route::delete ( '/note/{note}' , 'NotesController@destroy' )->name ( 'notes.note.destroy' )->where ( 'id' , '[0-9]+' );
