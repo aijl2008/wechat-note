@@ -1,7 +1,7 @@
 <?php
 namespace Awz\Note\Http\Controllers;
 
-use App\Models\Note;
+use Awz\Note\Models\Note;
 use EasyWeChat\Foundation\Application;
 use EasyWeChat\Message\Text;
 use Session;
@@ -50,7 +50,10 @@ class WechatController extends Controller {
             } );
             return $server->serve ();
         } catch ( \Exception $e ) {
-            return '<xml><ToUserName><![CDATA[o2n-VuDJR0GoWfc3NMiPWrgzsRrA]]></ToUserName><FromUserName><![CDATA[gh_5fa95ff46b17]]></FromUserName><CreateTime>1496033878</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[' . $e->getMessage () . ']]></Content></xml>';
+            error_log ( $e->getMessage () );
+            error_log ( $e->getTraceAsString () );
+            $message = $server->getMessage ();
+            return '<xml><ToUserName><![CDATA[' . $message[ 'FromUserName' ] . ']]></ToUserName><FromUserName><![CDATA[gh_5fa95ff46b17]]></FromUserName><CreateTime>1496033878</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[' . $e->getMessage () . ']]></Content></xml>';
         }
     }
 
