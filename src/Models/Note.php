@@ -54,7 +54,6 @@ class Note extends Model {
         if ( strlen ( $this->attributes[ 'content' ] ) <= 100 ) {
             return $this->attributes[ 'content' ];
         }
-        route ( 'notes.note.view' , $this->attributes[ 'id' ] );
-        return str_limit ( $this->attributes[ 'content' ] , 100 ) . '&gt;&gt;<a href="Note.php" target="_blank">MORE</a>';
+        return str_limit ( $this->attributes[ 'content' ] , 100 ) . '<a href="' . route ( 'notes.note.view' , $this->attributes[ 'id' ] ) . '" target="_blank">&gt;&gt;&gt;</a>';
     }
 }
